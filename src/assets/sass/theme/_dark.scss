@@ -1,0 +1,6 @@
+@import '../abstract/mixins';
+
+body.dark{
+    @include darkTheme;
+}
+

@@ -1,0 +1,5 @@
+@import '../abstract/mixins';
+
+body{
+    @include lightTheme;
+}
