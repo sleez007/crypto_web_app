@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+:root,body{
+    background: var(--clr-background);
+}
 body{
-    background-color: var(--clr-background);
+    font-family: var(--ff-primary);
+    color: var(--clr-primary-text-300);
+    font-size: var(--fs-100);
+}
+
+h1, h2, h3, h4{
+    color: var(--clr-primary-text-400);
+}
+
+h1{
+    font-size: var(--fs-400);
 }
