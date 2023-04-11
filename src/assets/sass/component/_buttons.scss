@@ -1,0 +1,12 @@
+.btn{
+    padding: .3em .8em;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    display: inline-block;
+
+    &--primary{
+        background-color: var(--clr-primary-400);
+        color: var(--clr-primary-text-400);
+    }
+}

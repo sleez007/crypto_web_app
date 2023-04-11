@@ -1,0 +1,38 @@
+.logo{
+    fill: var(--clr-primary-400);
+    width: 120px;
+    height: 24px;
+}
+
+.nav{
+    justify-content: flex-start;
+    margin: 1.7em;
+
+
+    &__menu{
+        flex: 1;
+        margin-left: 1.3em;
+    }
+    ul{
+        gap: .8em;
+        li{
+            color: var(--clr-primary-text-400);
+            transition: 200ms color ease-in-out ;
+            &:hover{
+                color: var(--clr-primary-400);
+            }
+
+            .icx{
+                width: 24px;
+                height: 24px;
+                font-size: 24px;
+                fill: var(--clr-primary-text-400);
+                color: var(--clr-primary-text-400);
+            }
+        }
+    }
+
+    &__right{
+        margin-left: auto;
+    }
+}

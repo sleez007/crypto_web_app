@@ -13,8 +13,8 @@
 
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -33,8 +33,10 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
+a{
   text-decoration-skip-ink: auto;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Make images easier to work with */

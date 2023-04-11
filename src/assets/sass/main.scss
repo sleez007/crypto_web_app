@@ -7,6 +7,8 @@
 @use 'component/buttons';
 @use 'layout/dashboard_layout';
 @use 'layout/main_layout';
+@use 'layout/utility';
+@use 'component/navbar';
 @use 'pages/home';
 @use 'theme/dark';
 @use 'theme/light';

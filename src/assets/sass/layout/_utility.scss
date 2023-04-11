@@ -1,0 +1,20 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid{
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   height: 100%; 
+}
+
+.container{
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1240px;
+    padding-inline: 1.3em;
+}
