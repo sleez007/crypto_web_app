@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
 import './assets/sass/main.scss';
+import MainLayout from './layout/main_layout';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <h1>Hello from our crypto project</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, explicabo.</p>
+    <MainLayout/>
   </React.StrictMode>
 );
 
