@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 export default function Navbar(){
@@ -12,7 +13,7 @@ export default function Navbar(){
             <nav className='nav__menu flex'>
                 <div className="nav__left">
                     <ul className='flex'>
-                        <li><a href="/">Buy crypto</a></li>
+                        <li><Link to='/about'>Buy crypto</Link></li>
                         <li><a href="/">Market</a></li>
                         <li><a href="/">Trade</a></li>
                         <li><a href="/">Derivates</a></li>

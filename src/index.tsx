@@ -3,19 +3,14 @@ import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
 import './assets/sass/main.scss';
-import MainLayout from './layout/main_layout';
-import Banner from './components/Banner';
-import Hero from './components/Hero';
+import RouteConfig from './router.config';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <MainLayout>
-      <Banner />
-      <Hero />
-    </MainLayout>
+    <RouteConfig />
   </React.StrictMode>
 );
 
