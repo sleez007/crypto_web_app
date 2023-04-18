@@ -1,0 +1,35 @@
+@import '../abstract/mixins';
+
+.hero{
+
+    .grid{
+        @include fromTablet{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3em;
+        }
+    }
+
+   &__detail{
+        &>*+*{
+            margin-top: 1.3em;
+        }
+        &>p{
+            justify-content: flex-start;
+        }
+
+        .cta-wrap{
+            &>*+*{
+                margin-top: 1.3em;
+            }
+            @include fromTablet{
+                max-width: 25em;
+            }
+        }
+   }
+   &__image{
+        display: none;
+        @include fromTablet{
+            display: block;
+        }
+   }
+}

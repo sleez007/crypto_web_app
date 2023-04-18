@@ -4,13 +4,18 @@ import reportWebVitals from './reportWebVitals';
 
 import './assets/sass/main.scss';
 import MainLayout from './layout/main_layout';
+import Banner from './components/Banner';
+import Hero from './components/Hero';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <MainLayout/>
+    <MainLayout>
+      <Banner />
+      <Hero />
+    </MainLayout>
   </React.StrictMode>
 );
 

@@ -18,3 +18,18 @@
     max-width: 1240px;
     padding-inline: 1.3em;
 }
+
+.icon{
+    height: 24px;
+    width: 24px;
+}
+
+.line{
+    height: 1px;
+    flex: 1;
+    background-color: var(--clr-secondary-400);
+}
+
+.gap-1{
+    gap:.5em
+}

@@ -9,4 +9,12 @@
         background-color: var(--clr-primary-400);
         color: var(--clr-primary-text-400);
     }
+    &--medium{
+        padding: .6em 1.2em;
+    }
+
+    &--full-width{
+        width: 100%;
+        text-align: center;
+    }
 }

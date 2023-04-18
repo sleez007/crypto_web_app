@@ -1,0 +1,26 @@
+@import '../abstract/mixins';
+
+
+.banner{
+    background-color: var(--clr-primary-300);
+    padding: .8em;
+
+    .wrap-banner{
+        gap: 2em;
+        justify-content: space-between;
+
+        @include fromTablet{
+            justify-content: center;
+        }
+    }
+
+    &__detail{
+        .icon{
+            min-width: 24px;
+        }
+    }
+
+    &__cta{
+        min-width: 8em;
+    }
+}
