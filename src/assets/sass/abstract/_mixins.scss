@@ -6,6 +6,8 @@
     --clr-primary-text-100: hsl(0, 0%, 100%);
     --clr-secondary-400: hsl(216, 14%, 93%);
     --clr-background: hsl(0, 0%, 98%);
+    --clr-divider: hsl(216, 14%, 93%);
+    --clr-alt-bg: hsl(214, 14%, 20%);
 }
 
 @mixin darkTheme {
@@ -16,6 +18,8 @@
     --clr-primary-text-100: hsl(0, 0%, 100%);
     --clr-secondary-400: hsl(217, 10%, 55%);
     --clr-background: hsl(210, 21%, 5%);
+    --clr-divider: hsl(218, 10%, 31%);
+    --clr-alt-bg: hsl(214, 14%, 20%);
 }
 
 @mixin fromTablet{

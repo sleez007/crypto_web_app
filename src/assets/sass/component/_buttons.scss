@@ -4,10 +4,16 @@
     outline: none;
     border: none;
     display: inline-block;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
 
     &--primary{
         background-color: var(--clr-primary-400);
         color: var(--clr-primary-text-400);
+    }
+    &--dark{
+        background-color: hsl(218, 10%, 31%);
+        color: hsl(0, 0%, 100%);
     }
     &--medium{
         padding: .6em 1.2em;

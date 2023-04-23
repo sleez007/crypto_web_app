@@ -11,8 +11,15 @@ body{
 
 h1, h2, h3, h4{
     color: var(--clr-primary-text-400);
+    font-weight: var(--fw-bold);
 }
 
 h1{
     font-size: var(--fs-400);
+}
+h2{
+    font-size: var(--fs-300);
+}
+h3{
+    font-size: var(--fs-200);
 }

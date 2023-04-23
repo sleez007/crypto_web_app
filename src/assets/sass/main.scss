@@ -3,11 +3,11 @@
 @use 'abstract/variable';
 @use 'base/reset';
 @use 'base/typography';
-@use 'component/banner';
-@use 'component/buttons';
+@use 'layout/utility';
 @use 'layout/dashboard_layout';
 @use 'layout/main_layout';
-@use 'layout/utility';
+@use 'component/banner';
+@use 'component/buttons';
 @use 'component/navbar';
 @use 'pages/home';
 @use 'theme/dark';

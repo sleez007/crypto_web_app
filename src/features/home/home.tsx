@@ -1,11 +1,11 @@
-import React from 'react'
-import Banner from '../../components/Banner'
+import React from 'react';
+import HomeBanner from './components/home_banner'
 import Hero from '../../components/Hero'
 
 export default function home() {
   return (
     <>
-        <Banner />
+        <HomeBanner />
         <Hero />
     </>
   )

@@ -1,26 +1,95 @@
 @import '../abstract/mixins';
 
 
-.banner{
-    background-color: var(--clr-primary-300);
-    padding: .8em;
+// DOWNLOAD BANNER
+.download-banner{
+    justify-content: space-between;
+    padding: .6em 1.4em;
+    border-bottom: 1px solid var(--clr-divider);
+    height: 5.3333em;
+    position: sticky;
+    top: 0;
+    background-color: var(--clr-background);
+    z-index: 1000;
 
-    .wrap-banner{
-        gap: 2em;
-        justify-content: space-between;
-
-        @include fromTablet{
-            justify-content: center;
+    &__text{
+        gap: .6em;
+        .cancel{
+            height:1.25em;
+            width:1.25em;
+            cursor: pointer;
         }
+    }   
+}
+
+
+// COUNTRY BANNER
+.top-banner{
+    padding: .8em 1.4em;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    justify-content: space-between;
+    background-color: var(--clr-alt-bg);
+    color: hsl(0, 0%, 100%);
+    gap: 1em;
+
+    @include fromTablet{
+        gap: 1em;
+        justify-content: center;
     }
 
-    &__detail{
-        .icon{
-            min-width: 24px;
+    &__content{
+        span{
+            padding-inline: .4em;
+            font-weight: var(--fw-bold);
+            color: var(--clr-primary-400);
         }
     }
 
     &__cta{
-        min-width: 8em;
+        gap: .6em;
+        .cancel{
+            width: 1.25em;
+            height: 1.25em;
+            color: hsl(216, 10%, 51%);
+            cursor: pointer;
+        }
+    }
+}
+
+// GIFT BANNER
+.banner{
+    padding: .8em 1.4em;
+    justify-content: space-between;
+    background-color: var(--clr-primary-300);
+    color: var(--clr-primary-text-400);
+    gap: 1em;
+
+    @include fromTablet{
+        gap: 1em;
+        justify-content: center;
+    }
+
+    &__content{
+        flex: 1 1 0%;
+        @include fromTablet{
+            flex: none;
+        }
+        .icon{
+            color: var(--clr-primary-400);
+            height: 2.5em;
+            width: 2.5em;
+
+            @include fromTablet{
+                height: 1.5em;
+                width: 1.5em;
+            }
+        }
+    }
+    &__cta{
+        .btn{
+            text-align: center;
+        }
     }
 }
