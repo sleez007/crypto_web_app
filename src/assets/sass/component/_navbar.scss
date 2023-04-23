@@ -1,45 +1,175 @@
 @import '../abstract/mixins';
 
-.logo{
-    fill: var(--clr-primary-400);
-    width: 120px;
-    height: 24px;
+.navbar{
+    height: 4em;
+    justify-content: flex-start;
+    gap: 1em;
+    padding: 0 1.4em 0;
+    color: var(--clr-primary-text-400);
+    cursor: pointer;
+    position: relative;
+
+    &__logo{
+        width: 120px;
+        height: 24px;
+        .logo{
+            fill: var(--clr-primary-400);
+        }
+    }
+
+    &__menu,.menu{
+        flex: 1;
+        justify-content: flex-start;
+
+        &__left{
+            height: 100%;
+            gap: .8em;
+            @media(max-width:1320px) {
+                max-width: 50em;
+                // clip: rect(auto,auto,auto,-11px);
+                // overflow-y: visible !important;
+                // overflow-x: hidden;
+            }
+            @media(max-width: 1079px){
+                display: none;
+            }
+            
+            justify-content: flex-start;
+            li{
+                height: 100%;
+                flex-shrink: 0;
+                position: relative;
+                .txt{
+                    transition: 200ms ease-in color;
+                }
+                &>svg{
+                    transition: 200ms ease-in transform;
+                }
+                svg.drop{
+                    color:var(--clr-primary-text-300);
+                }
+                &:hover{
+                    svg.drop{
+                        transform: rotate(180deg);
+                    }
+                    .txt{
+                        color: var(--clr-primary-400);
+                    }
+                    .mega-menu{
+                        display: grid;
+                    }
+                }
+            }
+        }
+
+        &__right{
+            padding-left: 1em;
+            z-index: 2;
+            background-color: var(--clr-background);
+            margin-left: auto;
+            gap: .8em;
+            ul{
+                gap: .8em;
+
+                li{
+                    flex-shrink: 0;
+
+                    .usd{
+                        gap: .4em;
+
+                        .v-line{
+                            height: 18px;
+                            width: 1px;
+                            background-color: var(--clr-primary-text-400);
+                        }
+                    }
+                }
+            }
+            @media(max-width: 1285px){
+                .md-hidden{
+                    display: none;
+                }
+                &__toggle{
+                    display: block;
+                }
+            }
+        }
+
+        &__toggle{
+            @media(min-width: 1285px){
+                display: none;
+            }
+        }
+
+    }
 }
 
-.nav{
-    justify-content: flex-start;
-    margin: 1.7em;
-
-
-    &__menu{
-        flex: 1;
-        margin-left: 1.3em;
-        display: none;
-
-        @include fromTablet{
-            display: flex;
-        }
+// MEGA MENU
+.mega-menu{
+   align-items: start;
+    display: none;
+    position: absolute;
+    // height: 400px;
+    // min-width: 800px;
+    top: calc(100% + 0px);
+    background: var(--clr-accent);
+    box-shadow: 0px 0px 20px hsla(0, 0%, 0%, 0.08);
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    left: 0;
+    padding: 1.6em;
+    column-gap: 1em;
+    &.single{
+        grid-template-columns: 1fr;
     }
-    ul{
-        gap: .8em;
-        li{
-            color: var(--clr-primary-text-400);
-            transition: 200ms color ease-in-out ;
-            &:hover{
-                color: var(--clr-primary-400);
+    &.double{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    &.triple{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item{
+        min-width:25em;
+        justify-content: flex-start;
+        gap: 1em;
+        padding: 1em;
+        transition: 200ms ease-in-out background-color;
+        &:hover{
+            background-color: var(--clr-hover);
+            border-radius:6px;
+            .mega{
+                &__arrow{
+                    visibility: visible;
+                }
             }
-
-            .icx{
-                width: 24px;
-                height: 24px;
-                font-size: 24px;
-                fill: var(--clr-primary-text-400);
-                color: var(--clr-primary-text-400);
+        }
+        .mega{
+            &__icon{
+                flex-shrink: 0;
+                svg{
+                    height: 1.875em;
+                    width: 1.875em;
+                }
+            }
+            &__title{
+                font-size: .9rem;
+            }
+            &__description{
+                max-width: 23em;
+                font-weight: var(--fw-light);
+                color: var(--clr-primary-text-300);
+                font-size: .89em;
+            }
+            &__arrow{
+                visibility: hidden;
+                margin-left: auto;
+                svg{
+                    color: var(--clr-primary-400);
+                }
             }
         }
+        
     }
-
-    &__right{
-        margin-left: auto;
-    }
+   
 }

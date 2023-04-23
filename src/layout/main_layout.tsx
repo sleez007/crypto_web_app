@@ -11,7 +11,7 @@ export default function MainLayout(props: PropsWithChildren){
        <>
             <Banner />
             <DownloadBanner />
-            {/* <Navbar /> */}
+            <Navbar />
             <Outlet />
             <Footer />
        </>
