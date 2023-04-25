@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import MobileNav from "./Mobile_Nav";
 import MegaMenu, { IMega } from "./Mega_Menu";
+import { DarkModeSwitch } from "./toggle";
+import React from "react";
 
 export interface Imenu{
     name: string;
@@ -375,6 +377,13 @@ const app: IMega = {
 
 
 export default function Navbar(){
+
+    const [isDark, setTheme] = React.useState(false);
+
+    const toggleTheme = () =>{
+       const isD: boolean =  document?.querySelector('body')?.classList.toggle('dark') ?? false;
+       setTheme(isD);
+    }
     return (
         <>
             <header>
@@ -437,7 +446,11 @@ export default function Navbar(){
                                     </a>
                                 </li>
                                 <li>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="header_menu_current_theme" className="icon"><use xlinkHref="#mode-dark"></use></svg>
+                                    <DarkModeSwitch
+                                        checked={isDark}
+                                        onChange={(c)=>toggleTheme()}
+                                        size={23}
+                                    />
                                 </li>
                             </ul>
                             <div className="menu__toggle">

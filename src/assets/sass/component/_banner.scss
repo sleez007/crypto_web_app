@@ -11,6 +11,9 @@
     top: 0;
     background-color: var(--clr-background);
     z-index: 1000;
+    // @include fromTablet{
+    //     display: none;
+    // }
 
     &__text{
         gap: .6em;

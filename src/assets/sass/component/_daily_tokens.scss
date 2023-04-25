@@ -1,0 +1,46 @@
+.token{
+
+
+    &__catalog{
+        margin-top: 4em;
+        gap: 2em;
+        grid-template-columns: repeat(auto-fit, minMax(15em, 1fr));
+
+        .catalog{
+            cursor: pointer;
+            background-color: rgb(250, 250, 250);
+            padding: 2em;
+            text-align: center;
+            border: 1px solid transparent;
+            border-radius: 1em;
+            transition: 200ms ease-in-out border-color;
+
+            .fab{
+                height: 2.5em;
+                width: 2.5em;
+                border-radius: 50%;
+                background-color: red;
+                margin-inline: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &:hover{
+                border: 1px solid var(--clr-primary-400);
+
+                .fab{
+                    background-color: var(--clr-primary-400);
+                }
+            }
+            img{
+                height: 2.5em;
+                width: 2.5em;
+                margin-inline: auto;
+            }
+            & > * + * {
+                margin-top: 1.5em;
+            }
+        }
+    }
+}

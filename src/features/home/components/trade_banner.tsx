@@ -33,13 +33,13 @@ export default function tradeBanner() {
   return (
     <div className="trade">
       <div className="inner_wp">
-        <div className="container">
-          <Slider {...settings}>
-            {
-              banners.map(slide => <TradeBanner image={slide.image} alt={slide.alt} key={slide.alt} />)
-            }
-          </Slider>
-        </div>
+      <div className="container">
+        <Slider {...settings}>
+          {
+            banners.map(slide => <TradeBanner image={slide.image} alt={slide.alt} key={slide.alt} />)
+          }
+        </Slider>
+      </div>
       </div>
     </div>
   )

@@ -17,6 +17,71 @@
                 display: flex;
             }
         }
+    }
 
+    &__list, &__end{
+        margin-top: 4em;
+    }
+
+    &__end{
+        p{
+            font-size: 1.4rem;
+            font-weight: var(--fw-bold);
+            color: var(--clr-primary-text-400);
+            margin-bottom: .8em;
+        }
+        .btn{
+            padding: 1em 3.4em;
+        }
+    }
+
+    .list__header{
+        border-radius: 6px;
+        transition: 200ms all ease-in;
+
+        &.hov:hover{
+            background-color: var(--clr-hover);
+        }
+        padding: 1em;
+        display: grid;
+        grid-template-columns: 2fr repeat(2, 1fr);
+        align-items: center;
+
+        .pin1{
+            color: var(--clr-primary-text-400);
+        }
+        .pin{
+            color: hsl(350, 62%, 50%);
+        }
+
+        .rm{
+            display: none;
+            justify-self: flex-end;
+            font-weight: var(--fw-bold);
+
+            &.nx{
+                font-weight: var(--fw-regular);
+            }
+        }
+
+        .ext{
+            justify-content: flex-start;
+        }
+
+        img{
+            height: 2.5em;
+            width:2.5em;
+        }
+
+        @include fromTablet{
+            grid-template-columns: 2fr repeat(1, 1fr);
+            .rm{
+                display: block;
+            }
+        }
+
+        @include fromDesktop{
+            grid-template-columns: 2.5fr repeat(3, 1fr);
+        }
     }
 }
