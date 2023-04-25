@@ -1,35 +1,77 @@
 @import '../abstract/mixins';
 
-.hero{
+.main{
+    padding-block: 6em 4em;
+    background-image: url('../../static/images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--hero-bg);
+    background-position: 30% center;
+    // height: 80vh;
 
-    .grid{
+    .hero{
+        gap: 2em;
         @include fromTablet{
             grid-template-columns: repeat(2, 1fr);
-            gap: 3em;
+            gap: 4em;
+            align-items: start;
+        }
+        @include fromDesktop{
+            gap: 10em;
+        }
+
+        &__content{
+            h1{
+                margin-bottom:1.2em;
+                &+div{
+                    margin-bottom: 1.4em;
+                    justify-content: flex-start;
+                    font-size: 1.2rem;
+                    color: var(--clr-primary-text-400);
+                    font-weight: var(--fw-light);
+                    svg.npx{
+                        color: var(--clr-primary-400);
+                    }
+                }
+            }
+            .cta-wrap{
+                max-width: 25em;
+                .btn{
+                    padding: 1em 1.9em;
+                    display: flex;
+                    gap: .3em;
+                    margin-bottom: 1.5em;
+
+                    svg{
+                        fill: var(--clr-primary-text-400);
+                    }
+                }
+                &__socials{
+                    gap: 1.5em;
+                    margin-top: 1.5em;
+                    .btn{
+                        flex:1;
+                    }
+                }
+            }
+        }
+        &__image{
+            display: none;
+            @include fromTablet{
+                display: block;
+            }
         }
     }
 
-   &__detail{
-        &>*+*{
-            margin-top: 1.3em;
-        }
-        &>p{
-            justify-content: flex-start;
-        }
-
-        .cta-wrap{
-            &>*+*{
-                margin-top: 1.3em;
-            }
-            @include fromTablet{
-                max-width: 25em;
+    .stats{
+        margin-top: 6em;
+        display: grid;
+        gap: 2em;
+        grid-template-columns: repeat(auto-fit, minMax(15em, 1fr));
+        &__item{
+            p{
+                font-weight: var(--fw-regular);
             }
         }
-   }
-   &__image{
-        display: none;
-        @include fromTablet{
-            display: block;
-        }
-   }
+    }
 }

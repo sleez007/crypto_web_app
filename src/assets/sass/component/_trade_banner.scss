@@ -1,0 +1,13 @@
+.trade{
+    background-color: var(--hero-bg);
+    .inner_wp{
+        border-top-right-radius: 3.5em;
+        border-top-left-radius: 3.5em;
+        padding-block: 4em;
+        background-color: var(--clr-background);
+    }
+    &__banner{
+        border-radius: 1.5em;
+        overflow: hidden;
+    }
+}

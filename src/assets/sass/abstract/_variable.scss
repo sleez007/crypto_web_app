@@ -2,7 +2,7 @@
 :root{
    --ff-primary: 'Inter', sans-serif;
 
-   --fs-400: 2.25rem;
+   --fs-400: 1.8rem;
    --fs-300: 1.5rem;
    --fs-300: 1rem;
    --fs-100: 0.75rem;
@@ -12,7 +12,7 @@
    --fw-light: 300;
 
    @include fromTablet{
-    --fs-400: 2.5rem;
+    --fs-400: 2.4rem;
     --fs-300: 2.5rem;
     --fs-300: .96rem;
     --fs-100: .89rem;

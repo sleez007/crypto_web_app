@@ -6,10 +6,11 @@
     --clr-primary-text-100: hsl(0, 0%, 100%);
     --clr-secondary-400: hsl(216, 14%, 93%);
     --clr-accent: hsl(0, 0%, 100%);
-    --clr-background: hsl(0, 0%, 98%);
+    --clr-background: hsl(0, 0%, 100%);
     --clr-divider: hsl(216, 14%, 93%);
     --clr-alt-bg: hsl(214, 14%, 20%);
     --clr-hover: hsl(0, 0%, 96%);
+    --hero-bg:hsl(0, 0%, 98%)
 }
 
 @mixin darkTheme {
@@ -24,10 +25,17 @@
     --clr-alt-bg: hsl(214, 14%, 20%);
     --clr-accent: hsl(213, 15%, 14%);
     --clr-hover: hsl(214, 14%, 20%);
+    --hero-bg:hsl(210, 21%, 5%);
 }
 
 @mixin fromTablet{
     @media(min-width: 50em){
+        @content;
+    }
+}
+
+@mixin fromDesktop{
+    @media(min-width: 80.3125em){
         @content;
     }
 }
