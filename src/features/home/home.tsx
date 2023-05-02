@@ -5,6 +5,8 @@ import PopularCoins from './components/popular_coins';
 import TradeBanner from './components/trade_banner';
 import Portfolio from './components/portfolio';
 import Dailytoken from './components/daily_tokens';
+import Explore from './components/explore';
+import TrustedExchange from './components/trusted_exchange';
 
 export default function home() {
   return (
@@ -15,6 +17,8 @@ export default function home() {
         <PopularCoins />
         <Portfolio />
         <Dailytoken />
+        <Explore />
+        <TrustedExchange />
     </>
   )
 }
