@@ -1,12 +1,89 @@
+@import '../abstract/mixins';
+
+
 .footer{
     padding-block: 6em;
 
     .head{
-        width: 400px;
         justify-content: space-between;
+        height: auto;
+        margin-bottom: 1em;
 
         h3{
             font-size: 1rem;
         }
+
+        .ich{
+            @include fromTablet{
+                display: none;
+            }
+        }
     }
+
+    &__group{
+        height: auto;;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 1em;
+
+        @include fromTablet{
+            grid-template-columns:repeat(4, 1fr)
+        }
+
+        @include fromDesktop{
+            grid-template-columns:repeat(6, 1fr)
+        }
+
+        .cms{
+            i{
+                font-size: 1.5rem;
+            }
+            @include fromTablet{
+                grid-row: 3/4;
+                grid-column: 1/ span 4;
+            }
+
+            @include fromDesktop{
+                grid-row: auto;
+                grid-column: auto;
+            }
+        }
+
+        .learn{
+           
+            
+            @include fromTablet{
+                margin-top: -60px;
+                grid-column: 4/ span 1;
+            }
+            @include fromDesktop{
+                margin-top: 0;
+                grid-column: auto;
+            }
+        }
+       
+    }
+
+    ul{
+        height: auto;
+        transition: 200ms all ease-in;
+
+        &.community{
+            justify-content: start;
+            grid-template-columns: repeat(auto-fit, minmax(30px,40px));
+        }
+
+        &.hide-accord{
+            height: 0;
+            overflow: hidden;
+            
+            @include fromTablet{
+                height: auto;
+                overflow: auto;
+            }
+        }
+    }
+
+    
 }
