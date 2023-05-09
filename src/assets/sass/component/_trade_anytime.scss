@@ -1,0 +1,115 @@
+@import '../abstract/mixins';
+
+.anytime{
+    padding-block: 3em;
+
+    &__heading{
+        justify-content: flex-start;
+
+        &>div{
+            display: none;
+        }
+
+        @include fromTablet{
+            justify-content: space-between;
+
+            &>div{
+                display: flex;
+            }
+        }
+    }
+
+    &>.container>.grid{
+        gap: 4em;
+        margin-top: 4em;
+        grid-template-columns: 1fr;
+
+        @include fromTablet{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__image{
+        .desk{
+            display: none;
+            @include fromDesktop{
+                display: block;
+            }
+        }
+        .mob{
+            display: block;
+            height: 380px;
+            overflow: hidden;
+            
+            img{
+                max-width: 90% ;
+                margin-inline: auto;
+            }
+
+            @include fromTablet{
+                height: auto;
+                overflow: auto;
+
+                img{
+                    max-width: 60%;
+                }
+            }
+            @include fromDesktop{
+                display: none;
+            }
+        }
+    }
+
+    &__content{
+        .bar-wrap{
+            justify-content: flex-start;
+            background-color: var(--clr-hover);
+            padding: 1em;
+            gap: 2em;
+            border-radius: .6em;
+            margin-bottom: 3em;
+            padding-left: 4em;
+            
+            
+            &>div>p:nth-child(2){
+                font-weight: var(--fw-bold);
+                color: var(--clr-primary-text-400);
+                font-size: 1.2rem;
+
+            }
+        }
+
+        .any{
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            column-gap: 8%;
+            row-gap: 5em;
+            color: var(--clr-primary-text-400);
+            max-width: 500px;
+           // padding-left: 4em;
+           
+            &> div {
+                flex: 0 0 25.33333%;
+                text-align: center;
+                transition: 200ms background-color ease-in ;
+                padding: 1em;
+                border-radius: 10px;
+                &.hideOnMob{
+                    display: none;
+                    @include  fromDesktop{
+                        display: block;
+                    }
+                }
+                &:hover{
+                    background-color:var(--clr-hover) ;
+                }
+                svg{
+                    height: 30px;
+                    width: 30px;
+                    margin-inline: auto;
+                    margin-bottom: 1.5em; 
+                }
+            }
+        }
+    }
+}

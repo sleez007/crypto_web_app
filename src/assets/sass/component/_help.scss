@@ -1,0 +1,32 @@
+.help{
+    padding-block: 5em 4em;
+
+    .grid{
+        margin-top: 3em;
+        gap: 2em;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        .hp{
+            gap: 1em;
+
+            &__description{
+                flex: 1;
+
+                h3{
+                    font-size: 1.1rem;
+                }
+
+                a{
+                    display: inline-block;
+                    color: var(--clr-primary-400);
+                }
+
+                &>*+*{
+                    margin-top: .7em;
+                }
+            }
+        }
+    }
+
+    
+}

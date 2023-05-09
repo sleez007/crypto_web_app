@@ -1,7 +1,12 @@
 import React from 'react'
 
-export default function earnToday() {
+export default function EarnToday() {
   return (
-    <div>earn_today</div>
+    <div className="earn">
+      <div className="container">
+        <h1>Start earning today</h1>
+        <button className='btn btn--primary'>Sign up Now</button>
+      </div>
+    </div>
   )
 }

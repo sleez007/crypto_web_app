@@ -7,6 +7,9 @@ import Portfolio from './components/portfolio';
 import Dailytoken from './components/daily_tokens';
 import Explore from './components/explore';
 import TrustedExchange from './components/trusted_exchange';
+import TradeAnytime from './components/trade_anytime';
+import Help from './components/help';
+import EarnToday from './components/earn_today';
 
 export default function home() {
   return (
@@ -19,6 +22,9 @@ export default function home() {
         <Dailytoken />
         <Explore />
         <TrustedExchange />
+        <TradeAnytime />
+        <Help />
+        <EarnToday />
     </>
   )
 }

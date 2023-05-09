@@ -10,7 +10,8 @@
     --clr-divider: hsl(216, 14%, 93%);
     --clr-alt-bg: hsl(214, 14%, 20%);
     --clr-hover: hsl(0, 0%, 96%);
-    --hero-bg:hsl(0, 0%, 98%)
+    --hero-bg:hsl(0, 0%, 98%);
+    --clr-text-dark: hsl(213, 15%, 14%);
 }
 
 @mixin darkTheme {
@@ -19,8 +20,9 @@
     --clr-primary-text-400: hsl(216, 14%, 93%);
     --clr-primary-text-300: hsl(214, 10%, 57%);
     --clr-primary-text-100: hsl(0, 0%, 100%);
+    --clr-text-dark: hsl(213, 15%, 14%);
     --clr-secondary-400: hsl(217, 10%, 55%);
-    --clr-background: hsl(210, 21%, 5%);
+    --clr-background: hsl(225, 14%, 11%);
     --clr-divider: hsl(218, 10%, 31%);
     --clr-alt-bg: hsl(214, 14%, 20%);
     --clr-accent: hsl(213, 15%, 14%);

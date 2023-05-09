@@ -1,0 +1,13 @@
+.earn{
+    padding-block: 6em;
+    text-align: center;
+    background-color: var(--hero-bg);
+
+    &>.container>*+*{
+        margin-top: 3em;
+    }
+    
+    .btn{
+        padding: 1em 3.4em;
+    }
+}

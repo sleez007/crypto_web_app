@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import MobileNav from "./Mobile_Nav";
 import MegaMenu, { IMega } from "./Mega_Menu";
 import { DarkModeSwitch } from "./toggle";
