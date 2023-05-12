@@ -377,7 +377,17 @@ const app: IMega = {
 
 export default function Navbar(){
 
+    const backdropRef = React.useRef<HTMLDivElement>(null);
+    const sidebarRef = React.useRef<HTMLElement>(null);
+
     const [isDark, setTheme] = React.useState(false);
+
+    const handleMenuToggleClick = () => {
+        backdropRef.current?.classList.add('show');
+        sidebarRef.current?.classList.add('show');
+        document!.querySelector('body')!.style.overflow ="hidden"
+        
+    }
 
     const toggleTheme = () =>{
        const isD: boolean =  document?.querySelector('body')?.classList.toggle('dark') ?? false;
@@ -452,7 +462,7 @@ export default function Navbar(){
                                     />
                                 </li>
                             </ul>
-                            <div className="menu__toggle">
+                            <div onClick={handleMenuToggleClick} className="menu__toggle">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="icon"><use xlinkHref="#menu-hamburger-f"></use></svg>
                             </div>
                         </div>
@@ -460,7 +470,9 @@ export default function Navbar(){
                     </div>
                 </nav>
             </header>
-            <MobileNav />
+            <div ref={backdropRef} className="backdrop"></div>
+            <MobileNav ref={sidebarRef} />
+
         </>
     );
 }

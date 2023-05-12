@@ -33,3 +33,39 @@
 .gap-1{
     gap:.5em
 }
+
+.addon{
+    background-color: var(--clr-primary-400);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: fixed;
+    right: 4em;
+    bottom:4em;
+    color: var(--clr-text-dark);
+    transition: 200ms all ease-in;
+    cursor: pointer;
+    
+    gap: .5em;
+    div{
+        display: none;
+        span{
+        
+            transition: 800ms visibility ease-in;
+            visibility: hidden;
+        }
+    }
+
+    &:hover{
+        width: 120px;
+        border-radius: 25px;
+        div{
+           display: block;
+           span{
+            visibility: visible;
+           }
+        }
+    }
+
+
+}

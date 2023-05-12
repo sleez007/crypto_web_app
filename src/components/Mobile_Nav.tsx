@@ -1,13 +1,12 @@
 import React from 'react'
 
-export default function MobileNav() {
+export default React.forwardRef((props, ref:any) => {
   return (
     <>
-        <div className="backdrop"></div>
-
-        <aside className="mobile-nav">
+        <aside ref={ref} className="mobile-nav">
             
         </aside>
     </>
-  );
-}
+  )
+})
+

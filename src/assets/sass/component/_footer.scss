@@ -85,5 +85,17 @@
         }
     }
 
+    &__sub{
+        text-align: center;
+        margin-block: 2em 0;
+
+        hr{
+            border-color: var(--clr-divider);
+        }
+
+        &>*+*{
+            margin-top: 1em;
+        }
+    }
     
 }

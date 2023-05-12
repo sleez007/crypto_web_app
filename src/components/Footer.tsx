@@ -65,6 +65,11 @@ export default function Footer() {
           {groups.map( (grp, index) => <FooterItem key={grp.title} index={index} {...grp} />)}
           
         </div>
+        <div className="footer__sub">
+         <hr />
+         <p>Binance &#169; {new Date().getFullYear()}</p>
+
+        </div>
       </div>
     </footer>
   )
