@@ -4,6 +4,8 @@ import About from "./features/about/about";
 import Login from "./features/login/login";
 import Signup from "./features/signup/signup";
 import MainLayout from "./layout/main_layout";
+import Dashboardlayout from "./layout/dashboard_layout";
+import Dashboard from "./features/dashboard/dashboard";
 
 
 export function NotFoundPage () {
@@ -21,6 +23,9 @@ const RouteConfig = () => (
                 <Route path="/about" element={<About />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+            </Route>
+            <Route path="/dashboard" element={<Dashboardlayout />} >
+              <Route index element={ <Dashboard />} />
             </Route>
             <Route  path="*" element={<NotFoundPage />} />
         </Routes>
