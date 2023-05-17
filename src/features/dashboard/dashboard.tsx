@@ -1,30 +1,60 @@
-import React from 'react'
+import React from 'react';
+import Stat from './component/stat';
+import Chart from './component/chart';
+import Pipe from './component/pipe';
+
+interface IStat{
+  title: string,
+  revenue: number,
+  margin: string,
+  shouldFormat?: boolean
+  icon: string
+}
+
+const statistics: IStat[] = [
+  {
+    title: 'Total Revenue',
+    revenue: 11354.00,
+    margin: '7.72%',
+    icon: 'bx-bullseye',
+  },
+  {
+    title: 'Total Customers',
+    revenue: 45439,
+    margin: '7.72%',
+    icon: ' bx-bar-chart',
+    shouldFormat: false
+  },
+  {
+    title: 'Total Profit', 
+    revenue: 83540,
+    margin: '7.72%',
+    icon: 'bx-pie-chart-alt'
+  },
+]
+
+// type bag = typeof statistics
 
 export default function Dashboard() {
+
   return (
     <div>
-      <div className="d-main grid">
+      <div className="d-main">
         <div className="d-main__content">
           <div className="summary flex">
             {
-              new Array(3).fill('').map(
-                e => (
-                  <div className="summary__card">
-                    <div>
-                      <p>Total Revenue</p>
-                      <span></span>
-                    </div>
-                    <div>
-                      <p>$4.00</p>
-                      <span>+6.2%</span>
-                    </div>
-                  </div>
+              statistics.map(
+                stat => (
+                  <Stat key={stat.title} stat={stat} />
                 )
               )
             }
           </div>
+          <Pipe />
         </div>
-        <aside className="d-main__aside">kbjb</aside>
+        <aside className="d-main__aside">
+          <Chart />
+        </aside>
       </div>
     </div>
   )
