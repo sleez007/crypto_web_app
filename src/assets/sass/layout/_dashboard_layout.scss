@@ -81,7 +81,7 @@
 
                 .sidenav__list{
                     flex: 1;
-                    overflow: scroll;
+                    overflow: auto;
                     padding-inline: 2em;
                 }
 
@@ -159,7 +159,10 @@ body.hide-sidbar{
 // Main content
 
 .d-main{
+    display: grid;
     grid-template-columns: 3.5fr 1.5fr;
+    gap: 1em;
+    align-items: start;
 
     .summary{
         gap: 2em;
@@ -167,11 +170,84 @@ body.hide-sidbar{
             padding: 2em;
             border: 1px solid #CCC;
             flex: 1;
+            color: var(--clr-primary-text-400);
+            background-color: #FFFFFF;
             border-radius: .4em;
             box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            .first_row, .second_row{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-            &:hover{
+                i{
+                    font-size: 2rem;
+                    color: var(--clr-primary-text-300);
+                }
+            }
+            .first_row{
+                align-items: center;
+                p{
+                    font-size: .83rem;
+                }
+            }
+            .second_row{
+                align-items: baseline;
+                p{
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                }
+                span{
+                    font-size: .7rem;
+                    color: green;
+                }
+            }
+
+            &>*+*{
+                margin-top: 2em;
+            }
+            // &:hover{
+            //     background-color: black;
+            // }
+            &:nth-child(1){
                 background-color: black;
+                color: #FFF;
+                .second_row > span{
+                    color: white;
+                }
+
+            }
+        }
+    }
+
+    .chart{
+        min-height: 250px;
+        padding: 2em;
+        border: 1px solid #CCC;
+        color: var(--clr-primary-text-400);
+        background-color: #FFFFFF;
+        border-radius: .4em;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
+        h2{
+            margin-bottom: 2em;
+        }
+
+        &.stst{
+            margin-top: 4em;
+            h2{
+                margin-bottom: 0;
+            }
+            .lnnn{
+                display: flex;
+                justify-content: space-between;
+                align-items: center !important;
+                .flex{
+                    gap: .5em;
+
+                    button{
+                        padding: .4em .7em;
+                    }
+                }
             }
         }
     }
