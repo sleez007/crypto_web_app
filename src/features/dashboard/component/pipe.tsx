@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid,  ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 const data = [
     {
@@ -46,27 +46,34 @@ const data = [
     },
   ];
 
+  type selectedBtn =  'DAY' | 'WEEK' | 'MONTH';
 export default function Pipe() {
+  const [select, setSelected] = React.useState<selectedBtn>('WEEK')
+  const [d, updateD] = React.useState(data)
+  
   return (
     <div className="chart stst">
        <div className='lnnn'>
             <h2>Financial Summary</h2>
 
-            <div className='flex'>
-                <button>Day</button>
-                <button>Week</button>
-                <button>Month</button>
+            <div className='flex nnt'>
+              <button onClick={()=> {
+                setSelected('DAY');
+                updateD([...data.reverse()])
+              }} className={`${select === 'DAY' ? 'active': 'null'}`}>Day</button>
+              <button onClick={()=> setSelected('WEEK')} className={`${select === 'WEEK' ? 'active': 'null'}`}>Week</button>
+              <button onClick={()=> setSelected('MONTH')} className={`${select === 'MONTH' ? 'active': 'null'}`}>Month</button>
             </div>
        </div>
         <ResponsiveContainer width="99%" height="280px" aspect={3.5} >
         <BarChart
-          data={data}
+          data={d}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Legend />
+          {/* <Legend /> */}
           <Bar barSize={7} radius={6} dataKey="pv" fill="#020202" />
           <Bar barSize={7} radius={6} dataKey="uv" fill="#E1D4C4" />
           <Bar barSize={7} radius={6} dataKey="amt" fill="#BBC1BA" />

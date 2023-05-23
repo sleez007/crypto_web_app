@@ -2,6 +2,8 @@ import React from 'react';
 import Stat from './component/stat';
 import Chart from './component/chart';
 import Pipe from './component/pipe';
+import Order from './component/order';
+import Sales from './component/sales';
 
 interface IStat{
   title: string,
@@ -51,9 +53,11 @@ export default function Dashboard() {
             }
           </div>
           <Pipe />
+          <Order />
         </div>
         <aside className="d-main__aside">
           <Chart />
+          <Sales />
         </aside>
       </div>
     </div>
