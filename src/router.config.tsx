@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./features/home/home";
 import About from "./features/about/about";
-import Login from "./features/login/login";
-import Signup from "./features/signup/signup";
+import Login from "./features/auth/login/login";
+import Signup from "./features/auth/signup/signup";
 import MainLayout from "./layout/main_layout";
 import Dashboardlayout from "./layout/dashboard_layout";
 import Dashboard from "./features/dashboard/dashboard";

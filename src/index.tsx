@@ -4,13 +4,23 @@ import reportWebVitals from './reportWebVitals';
 
 import './assets/sass/main.scss';
 import RouteConfig from './router.config';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { Provider } from 'react-redux';
+import { store } from './store';
+//import AdapterDateFns from "@mui/x-date-pickers/AdapterDateFns";
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <RouteConfig />
+    <Provider store={store}>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <RouteConfig />
+      </LocalizationProvider>
+    </Provider>
+    
   </React.StrictMode>
 );
 

@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.3",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.2",
+    "@mui/x-date-pickers": "^6.5.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -12,6 +16,8 @@
     "@types/react": "^18.0.30",
     "@types/react-dom": "^18.0.11",
     "antd": "^5.5.0",
+    "dayjs": "^1.11.7",
+    "formik": "^2.2.9",
     "i": "^0.3.7",
     "moment": "^2.29.4",
     "npm": "^9.6.5",
@@ -27,7 +33,8 @@
     "sass": "^1.60.0",
     "slick-carousel": "^1.8.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

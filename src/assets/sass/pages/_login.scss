@@ -1,0 +1,13 @@
+.login-form{
+    margin-block: 8em;
+    max-width: 45em;
+
+    h2{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    form>*+*{
+        margin-top: 1.5em;
+    }
+}

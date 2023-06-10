@@ -11,6 +11,8 @@
 @use 'component/navbar';
 @use 'component/footer';
 @use 'pages/home';
+@use 'pages/login';
+@use 'pages/sign-up';
 @use 'theme/dark';
 @use 'theme/light';
 @use 'vendor/slick';
