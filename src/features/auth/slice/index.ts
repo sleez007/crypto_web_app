@@ -1,50 +1,54 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-interface User{
+interface ILogin{
+    email: string;
+    password: string
+}
+
+interface LoginResponse{
+    id: number;
     email: string;
     firstName: string;
     lastName: string;
-    id: number;
+    isTwoFactorEnabled: boolean;
+    createdAt: string;
+    updatedAt:string;
+    ipAddress: string;
+    token: string;
 }
 
-interface Token{
-    accessToken: string;
-    refreshToken: string;
+interface IRegister{
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
 }
 
-export interface AuthState {
-  loaded: boolean;
-  error: string | null;
-  user: User | null;
-  token: Token | null;
-  email: string;
+interface RegisterResponse{
+    message: string;
+    id: number
 }
 
-export const initialState: AuthState = {
-  loaded: true,
-  error: null,
-  user: null,
-  token: null,
-  email: 'okkokokokokokokok@mmm.com'
-}
+export const authSlice = createApi({
+    reducerPath: 'authApi',
+    baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000'}),
+    endpoints: (builder) => ({
+        login: builder.mutation<LoginResponse, ILogin>({
+            query: (body: ILogin) => ({
+                url: 'auth/login',
+                body,
+                method: 'POST'
+            })
+        }),
+        signup: builder.mutation<RegisterResponse, IRegister>({
+            query: (body: IRegister) => ({
+                url: 'auth/create-account',
+                body,
+                method: 'POST'
+            })
+        }),
+    })
+});
 
-export const authSlice = createSlice({
-    name: 'auth',
-    initialState,
-    reducers: {
-        login: (state) =>{
-            state.loaded = false;
-        },
-        signup: (state) =>{
-            state.loaded = false;
-        }
-        
-    }
-
-})
-
-export const { login, signup } = authSlice.actions
-
-export default authSlice.reducer
+export const { useLoginMutation, useSignupMutation } = authSlice
 

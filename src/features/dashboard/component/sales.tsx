@@ -32,8 +32,8 @@ export default function SalesComponent() {
         </div>
         <div className="sales__list">
             {
-                sales.map(sale =>(
-                    <div className='flx-item'>
+                sales.map((sale, i) =>(
+                    <div key={i} className='flx-item'>
                         <div className='flex gap-1 inw'>
                             <img src={sale.avatar} alt={sale.fullName} />
                             <div>

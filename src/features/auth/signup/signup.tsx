@@ -2,16 +2,17 @@ import React from 'react'
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 import { Button, TextField } from '@mui/material';
-import { DateField } from '@mui/x-date-pickers';
-import moment from 'moment';
+import { useSignupMutation } from '../slice';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const maxDate = new Date()
-maxDate.setFullYear(maxDate.getFullYear() - 18)
+// const maxDate = new Date()
+// maxDate.setFullYear(maxDate.getFullYear() - 18)
 
 const validationSchema = yup.object({
   firstName: yup.string().min(2, 'Cannot be less than 2 characters').required('Firstname is required'),
   lastName: yup.string().min(2, 'Cannot be less than 2 characters').required('Lastname is required'),
-  dob: yup.date().max(maxDate).required(),
+ //dob: yup.date().max(maxDate).required(),
   email: yup
     .string()
     .email('Enter a valid email')
@@ -25,27 +26,60 @@ const validationSchema = yup.object({
 
 
 export default function Signup() {
+  const [signup, {isLoading, isError, isSuccess, data}] = useSignupMutation()
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
-      dob: '',
       email: '',
       password: '',
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      signup({...values}).unwrap()
+      .then((d)=>{
+       // toastId.current = toast.success('Login success')
+        toast.dismiss()
+        toast.success(d.message);
+        navigate('/login')
+
+      })
+      .catch((err)=>{
+        toast.dismiss()
+        toast.error(err.data.message)
+      } )
     },
   });
-
-  const  extractTime = (val : any ) => moment(val.BeginDate_1).format('YYYY-MM-DD');
 
   
   return (
     <div className='login-form container'>
-      <h2>Login</h2>
+      <h2>Create Account</h2>
       <form onSubmit={formik.handleSubmit}>
+        <TextField
+          fullWidth
+          id="firstName"
+          name="firstName"
+          label="First Name"
+          value={formik.values.firstName}
+          onChange={formik.handleChange}
+          variant="outlined"
+          error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+          helperText={formik.touched.firstName && formik.errors.firstName}
+        />
+        <TextField
+          fullWidth
+          id="lastName"
+          name="lastName"
+          label="lastName"
+          value={formik.values.lastName}
+          onChange={formik.handleChange}
+          variant="outlined"
+          error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+          helperText={formik.touched.lastName && formik.errors.lastName}
+        />
         <TextField
           fullWidth
           id="email"
@@ -69,7 +103,7 @@ export default function Signup() {
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
         />
-         
+{/*          
         <DateField 
           fullWidth 
           name='dob' 
@@ -82,11 +116,11 @@ export default function Signup() {
             console.log(extractTime(value));
             formik.setFieldValue('dob', extractTime(value), true)
           }}   
-        />
+        /> */}
     
         
         <Button color="primary" variant="contained" fullWidth type="submit">
-          Submit
+          {isLoading ?'Loading...' : 'Submit'}
         </Button>
       </form>
     </div>

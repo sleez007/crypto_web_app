@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import btc from '../../../assets/static/images/btc.png';
-import busd from '../../../assets/static/images/busd.png';
-import gmt from '../../../assets/static/images/gmt.png';
-import bnb from '../../../assets/static/images/bnb.png';
+// import busd from '../../../assets/static/images/busd.png';
+// import gmt from '../../../assets/static/images/gmt.png';
+// import bnb from '../../../assets/static/images/bnb.png';
 
 interface ICatalog{
   image: string;
@@ -85,7 +85,7 @@ export default function Dailytoken() {
         <div className="token__catalog grid">
             {
               catalogs.map((item, index) => (
-                <div className="catalog">
+                <div key={index} className="catalog">
                     <img src={item.image} alt={item.title} />
                     <h3>{item.title}</h3>
                     <p>{item.subTitle}</p>

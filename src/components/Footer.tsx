@@ -98,11 +98,11 @@ function FooterItem({content, title, isCommunity, index}: IGroup & {index: numbe
         {
           content.map((item, i) =>{
             const defaultList =  <li><a href="/">{item}</a></li>
-            return <>
+            return <div key={i}>
               {
                 isCommunity ? <li key={i}><i className={`bx ${item}`}></i></li> :  defaultList
               }
-            </>
+            </div>
           })
         }
         </ul>

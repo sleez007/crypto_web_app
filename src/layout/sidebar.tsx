@@ -1,8 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import { useAppDispatch, useAppSelector } from '../store/hook'
+import { RootState } from '../store';
+import { Link } from 'react-router-dom';
+import { logout } from '../store/global.store';
 
 interface ISidebar{
     name: string;
-    link?: string;
+    link: string;
     icon: string;
 }
 
@@ -13,17 +18,17 @@ const  list : ISidebar[]= [
     {
         name: 'Dashboard',
         icon: 'bxs-dashboard',
-        link: '/'
+        link: '/dashboard'
     },
     {
         name: 'Wallet',
         icon: 'bx-wallet-alt',
-        link: '/'
+        link: '/dashboard/product'
     },
     {
         name: 'Card',
         icon: 'bxs-credit-card',
-        link: '/'
+        link: '/login'
     },
     {
         name: 'Diamond',
@@ -38,6 +43,9 @@ const  list : ISidebar[]= [
 ]
 
 export default function Sidebar() {
+    const dispatch = useAppDispatch()
+    const email = useAppSelector((state: RootState) => state.global.email);
+    const firstName = useAppSelector((state: RootState) => state.global.firstName);
   return (
     <aside className="dashboard__sidebar sidebar flex">
         <div className='sidebar__logo'>
@@ -45,28 +53,30 @@ export default function Sidebar() {
         </div>
         <div className="sidebar__header">
             <img src="https://papik.pro/en/uploads/posts/2022-06/1655831806_1-papik-pro-p-cool-avatar-pictures-1.jpg" alt="Monkey Man" />
-            <h3>Undertaker Kong</h3>
-            <p>kong@pandora.com</p>
+            <h3>{firstName}</h3>
+            <p>{email}</p>
         </div>
         <div className="sidebar__wrap">
             <ul className='sidenav__list'>
             {
                 list.map(e =>(
-                    <li>
-                    <a className='flex gap-1' href={e.link}>
+                    <li key={e.name}>
+                    <Link className='flex gap-1' to={e.link}>
                         <i className={`bx ${e.icon}`}></i>
                         <span >
                             {e.name}
                         </span>
-                    </a>
+                    </Link>
                     </li>
                 ))
             }
             
             </ul>
             <ul className='sidenav__bottom'>
-                <li>
-                    <a className='flex gap-1' href="/">
+                <li onClick={()=>{
+                     dispatch(logout())
+                }}>
+                    <a className='flex gap-1' >
                         <i className='bx bx-log-in'></i>
                         <span >
                             Logout

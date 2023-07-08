@@ -7,7 +7,10 @@ import RouteConfig from './router.config';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { persistor, store } from './store';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer} from 'react-toastify';
+import { PersistGate } from 'redux-persist/integration/react';
 //import AdapterDateFns from "@mui/x-date-pickers/AdapterDateFns";
 
 const container = document.getElementById('root')!;
@@ -16,9 +19,12 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <RouteConfig />
-      </LocalizationProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <ToastContainer />
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <RouteConfig />
+        </LocalizationProvider>
+      </PersistGate>
     </Provider>
     
   </React.StrictMode>
